@@ -1,0 +1,250 @@
+/* 와이드 pc  */
+
+.videoBox{width:100%;height:100%; overflow:hidden; position:absolute}
+
+#imgBG{
+    position:fixed; /*고정=>fixed/ 스크롤처리=>absolute */
+    left:50%;
+    top:50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
+    width:auto;
+    min-width:100%; /*동영상 너비를 꽉차게*/
+    height:auto;
+    min-height:100%; /*동영상 높이를 꽉차게*/
+    transform:translateX(-50%) translateY(-50%);
+    z-index:-100;
+}
+
+.down{display: block; width: 88px; position: absolute;
+	left:50%; margin-left: -44px; bottom: 15%;
+	animation:ani 1s infinite alternate;}
+.down img{display: block; width: 100%;}
+@keyframes ani {
+	0% { transform:scale(1); opacity:1;}
+	100% { transform:scale(1.1); opacity:0.8;}
+}
+
+.scan-title {
+    position: relative;
+    display: inline-block;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(0, 112, 209, 0.8), 0 0 30px rgba(0, 162, 255, 0.6);
+}
+
+.scan-title span {
+    display: inline-block;
+    animation: glitchEntrance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+               neonPulse 2.5s infinite alternate ease-in-out 0.8s;
+}
+
+/* 등장 시 강렬한 글리치 + 확대 효과 */
+@keyframes glitchEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(1.4) skewX(-20deg);
+        text-shadow: -5px 0 #ff0055, 5px 0 #00f0ff;
+        filter: blur(8px);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(0.95) skewX(15deg);
+        text-shadow: 4px 0 #ff0055, -4px 0 #00f0ff;
+        filter: blur(0);
+    }
+    70% {
+        transform: scale(1.02) skewX(-5deg);
+        text-shadow: -2px 0 #ff0055, 2px 0 #00f0ff;
+    }
+    100% {
+        transform: scale(1) skewX(0);
+        text-shadow: 0 0 15px rgba(0, 112, 209, 0.8), 0 0 35px rgba(0, 162, 255, 0.5);
+    }
+}
+
+/* 등장 후 은은하게 살아 숨쉬는 네온 빛 */
+@keyframes neonPulse {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 112, 209, 0.6), 0 0 20px rgba(0, 112, 209, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(0, 162, 255, 1), 0 0 45px rgba(0, 112, 209, 0.9), 0 0 70px rgba(0, 212, 255, 0.6);
+    }
+}
+	
+#content{width:100%; margin:0; height:auto; background:rgba(0,0,0,.95);position: relative;  }
+#content h2{position: absolute; top: -520px; left:50%;transform: translateX(-50%); font-size: 5rem; color: #fff;}
+
+.sec1{padding: 150px 200px; color: #fff; width: 100%;}
+.sec1 h3{font-size:var(--font-h3-size); text-align: center; margin: 50px 0 10px; color: #fff;}
+#text{text-align: center; font-size: var(--font-24-size); font-weight: 600;}
+#text dt{color: #fff;}
+
+.swiper-container {
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 20vw;       
+    height: 20vw;      
+    max-width: 300px;  
+    min-width: 150px;  
+    max-height: 300px; 
+    min-height: 150px; 
+}
+.game-info-container{padding: 100px 0;}
+.game-info-item {
+    display: none; 
+}
+.game-info-item.active {
+    display: block;
+    padding: 0; 
+}
+.game-info-item .top{display: flex; justify-content: space-between; align-items: center; margin: 100px 0 150px; width: 100%;}
+.game-info-item .top_left{ flex-shrink: 0; z-index: 10; width: 40%;}
+.game-info-item .top .top_left ul{
+    display: flex; 
+    align-items: flex-start; 
+    margin: 10px 0; 
+    gap: 10px;
+}
+.game-info-item .top_left ul li{
+    padding: 5px 28px; 
+    background: var(--color-main); 
+    transform: skewX(-18deg);
+}
+.game-info-item .top_left ul li span{
+    display: block; 
+    font-size: var(--font-18-size);
+    font-weight: 600;
+    transform: skew(18deg);
+}
+.game-info-item .top_left dl{width: 70%;}
+.game-info-item .top_left dl dt{
+    font-size: 5.5vw; 
+    line-height: 1.05;
+    font-weight: 800; 
+    position: relative; 
+    z-index: 3; 
+    text-shadow: 0 4px 24px rgba(0,0,0,.55);
+    margin: 0 0 50px 0;
+}
+.game-info-item .top_left dl dt span{display: block; }
+.game-info-item .top_left dl dd{
+    width: 70%;
+    font-size: 1vw;
+    word-break: keep-all;
+}
+.game-info-item .top_right{
+    margin-left: -60px;
+    z-index: 1;
+    border: 1px solid var(--color-main); 
+    padding: 10px;
+    transform: skew(-15deg);
+    width: 65%;
+}
+.game-info-item .top_right img{z-index: 2; width: 100%;}
+.game-info-item .top_right .top2{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 100px;
+    transform: skew(15deg);
+    margin: 10px 0;
+}
+.game-info-item .top_right .top2 dt{
+    font-size: 1.2vw;
+    color: var(--color-font3);
+}
+.game-info-item .top_right .top2 dd{
+    font-size: 1.6vw;
+    font-weight: 600;
+}
+
+.game-info-item .bottom ul li{display: flex; justify-content: space-between; align-items: center; gap: 50px; margin-bottom: 50px;}
+.game-info-item .bottom ul li img{
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+.game-info-item .bottom ul li dt{
+    font-size: var(--font-30-size); 
+    margin-bottom: 30px; 
+    display: flex; 
+    align-items: 
+    center; gap: 10px;
+    font-weight: 600;
+}
+.game-info-item .bottom ul li dt::before{
+    content: "";
+    display: block;
+    width: 5px;
+    height: 40px;
+    border-radius: 20%;
+    background: var(--color-main);
+}
+.game-info-item .bottom ul li dd{font-size: var(--font-20-size); width: 64%; margin-left: 15px;}
+.game-info-item .bottom ul li:nth-of-type(1) dd{width: 67%;}
+.game-info-item .bottom ul li:nth-of-type(2) img{order: 2;}
+.game-info-item .bottom ul li:nth-of-type(2) {order: 1;}
+
+
+
+
+
+
+@media (max-width: 1280px){
+    .sec1{padding: 100px;}
+
+    .game-info-item .top_left ul{flex-direction: column;}
+
+}
+
+@media (max-width: 1024px){
+
+}
+@media (max-width: 960px){
+    .sec1{padding: 100px 60px;}
+    .game-info-item .top{flex-direction: column;}
+    .game-info-item .top_left{width: 90%;}
+    .game-info-item .top_left dl dt{margin-bottom: 30px;}
+    .game-info-item .top_left dl dt span{display: inline;}
+    .game-info-item .top_left dl dd{font-size: 1.8vw; width: 100%;}
+    .game-info-item .top_right{width: 100%; transform: skew(-10deg); margin: 30px 0;}
+    .game-info-item .top_right .top2 dt{font-size: 1.8vw;}
+    .game-info-item .top_right .top2 dd{font-size: 2.5vw;}
+    .game-info-item .bottom ul li dt{font-size: var(--font-28-size);}
+
+    .game-info-item .bottom ul li dd,
+    .game-info-item .bottom ul li:nth-of-type(1) dd{width: 100%;}
+}
+
+@media (max-width: 768px){
+    .game-info-item .bottom ul li{flex-direction: column; align-items: normal; margin-bottom: 100px;}
+    .game-info-item .bottom ul li dl{order: 1; align-items: normal;}
+    .game-info-item .bottom ul li img{order: 2; width: 100%;}
+}
+
+@media (max-width: 640px){
+    .sec1 h3{font-size: 6vw;}
+    .game-info-item .top_left{width: 100%;}
+    .game-info-item .top_left dl dd{font-size: 14px;}
+    .game-info-item .top_right .top2{gap: 30px;}
+    .game-info-item .bottom ul li dt{line-height: 1.5;}
+    .swiper-button-prev, .swiper-button-next { display: none; }
+    
+}
+
+@media (max-width: 480px){
+    .sec1{padding: 100px 30px;}
+    .game-info-item .top_right .top2 dt{font-size: 14px;}
+    .game-info-item .top_right .top2 dd{font-size: 16px;}
+}
+

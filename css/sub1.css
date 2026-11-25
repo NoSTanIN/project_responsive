@@ -1,0 +1,281 @@
+/* 와이드 pc  */
+
+	
+.videoBox{width:100%;height:100%; overflow:hidden; position:absolute}
+
+#imgBG{
+	position:fixed; /*고정=>fixed/ 스크롤처리=>absolute */
+   left:50%;
+   top:50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
+   width:auto;
+   min-width:100%; /*동영상 너비를 꽉차게*/
+   height:auto;
+   min-height:100%; /*동영상 높이를 꽉차게*/
+  transform:translateX(-50%) translateY(-50%);
+   z-index:-100;
+}
+
+.down{display: block; width: 88px; position: absolute;
+	 left:50%; margin-left: -44px; bottom: 5%;
+	animation:ani 1s infinite alternate;}
+.down img{display: block; width: 100%;}
+@keyframes ani {
+	0% { transform:scale(1); opacity:1;}
+	100% { transform:scale(1.1); opacity:0.8;}
+}
+	
+#content{width:100%; margin:0; height:auto; background:rgba(0,0,0,.9);position: relative;  }
+#content h2{position: absolute; top: -520px; left:50%;transform: translateX(-50%); font-size: 5rem; color: #fff;}
+
+.sec1{background: #fff; display: flex; justify-content: space-between; align-items: center; padding: 100px 100px 100px 100px;}
+.sec1 div > span{color: var(--color-main); display: flex; gap: 10px; align-items: center; font-weight: 600; margin-bottom: 30px;}
+.sec1 div > span::before{
+   content: "";
+   display: block;
+   width: 30px;
+   height: 2px;
+   background: var(--color-main);
+}
+.sec1 h3{font-size: var(--font-h3-size);}
+.sec1 h3 span{display: block; color: var(--color-main);}
+.sec1 p{margin-top: 20px; font-size: var(--font-22-size);}
+.sec1 div:nth-child(1){width: 40%;}
+.sec1 div:nth-child(2){width: 50%;}
+.sec1 img{width: 100%; height: 100%; object-fit: cover; object-position: center;}
+
+.sec2{background: #0A1630; color: #fff; padding: 100px 50px 100px 50px;}
+.sec2 > span{color: var(--color-main); display: flex; gap: 10px; align-items: center; font-weight: 600; margin-bottom: 20px;}
+.sec2 > span::before{
+   content: "";
+   display: block;
+   width: 30px;
+   height: 2px;
+   background: var(--color-main);
+}
+.sec2 > div{display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px;}
+.sec2 > div h3{font-size: var(--font-h3-size);}
+.sec2 > div p{color: var(--color-font3); font-size: var(--font-18-size);}
+.sec2 ul li{width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; margin: 100px 0; gap: 300px;}
+.sec2 ul li>span{display:block;width: 50%; height: 100%;}
+.sec2 ul li>span img{width: 100%; height: 100%; object-fit: cover; object-position: center;}
+.sec2 ul li div strong{
+   display: block;
+   line-height: 1;
+   margin-bottom: 30px;
+   font-size: 8rem;
+   font-weight: 700;
+   color: transparent;
+   -webkit-text-stroke: 5px #2563eb;
+}
+.sec2 ul li div span{
+   display: block;
+   color: var(--color-point2);
+   font-weight: 600;
+   margin-bottom: 20px;
+}
+.sec2 ul li div dl dt{
+   font-size: var(--font-36-size);
+   font-weight: 500;
+   line-height: 1;
+   margin-bottom: 20px;
+   display: block;
+}
+.sec2 ul li div dl dt::after{
+   content: "";
+   display: block;
+   margin-top: 20px;
+   width: 40px;
+   height: 3px;
+   background: var(--color-main);
+}
+.sec2 ul li div dl dd{
+   color: var(--color-font3);
+   font-size: var(--font-18-size);
+}
+.sec2 ul li:nth-of-type(2) span{order: 2;}
+.sec2 ul li:nth-of-type(1) div{order: 1;}
+
+.sec3{background: #fff; padding: 100px 50px 100px 50px; width: 100%;}
+.sec3 > span{color: var(--color-main); display: flex; gap: 10px; align-items: center; font-weight: 600; margin-bottom: 20px;}
+.sec3 > span::before{
+   content: "";
+   display: block;
+   width: 30px;
+   height: 2px;
+   background: var(--color-main);
+}
+.sec3 > div{display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px;}
+.sec3 > div h3{font-size: var(--font-h3-size);}
+.sec3 > div p{color: var(--color-font3); font-size: var(--font-18-size); margin-right: 50px;}
+.sec3 ul{display: flex; justify-content: center; align-items: center; gap: 50px; padding: 100px 0;}
+.sec3 ul li{border-top: 5px solid #2DBBA4; padding: 30px; background: var(--color-sub1); width: 100%; height: auto;}
+.sec3 ul li:nth-of-type(2){border-top: 5px solid #EE4A2F;}
+.sec3 ul li:nth-of-type(3){border-top: 5px solid #4A7BDC;}
+.sec3 ul li:nth-of-type(4){border-top: 5px solid #D878B4;}
+.sec3 ul li div{text-align: center; margin: 10px 0 30px;}
+.sec3 ul li span{color: #2DBBA4; font-weight: 500; font-size: var(--font-18-size); margin-bottom: 20px; display: block;}
+.sec3 ul li:nth-of-type(2) span{color: #EE4A2F;}
+.sec3 ul li:nth-of-type(3) span{color: #4A7BDC;}
+.sec3 ul li:nth-of-type(4) span{color: #D878B4;}
+.sec3 ul li h4{font-size: var(--font-h5-size); line-height: 1; margin-bottom: 10px;}
+.sec3 ul li p{font-size: var(--font-18-size); color: var(--color-font2);}
+
+.sec4{background: #0A1630; color: #fff; padding: 100px 50px 150px 50px; position: relative; width: 100%; height: auto;}
+.sec4 > span{color: var(--color-main); display: flex; gap: 10px; align-items: center; font-weight: 600; margin-bottom: 20px;}
+.sec4 > span::before{
+   content: "";
+   display: block;
+   width: 30px;
+   height: 2px;
+   background: var(--color-main);
+}
+.sec4 > h3{font-size: var(--font-h3-size);}
+.sec4 ul{display: flex; justify-content:space-between; align-items: center; margin-top: 50px; width: 100%; height: auto;}
+.sec4 ul li{border-left: 1px solid rgba(255,255,255,.3); padding-left: 40px; font-size: 2vw; width: 24%;}
+.sec4 ul li:nth-of-type(1){border: none;}
+.sec4 ul li p:nth-of-type(1){font-size: 5vw; line-height: 1.5;}
+.sec4 ul li p:nth-of-type(1) span{font-size: 2.5vw; vertical-align: baseline; color: var(--color-main); font-weight: 600;}
+.sec4 ul li strong{font-size: 1.5vw;}
+.sec4 ul li p:nth-of-type(2){font-size: 1vw; color: var(--color-font2); margin-top: 10px;}
+.sec4 > p{color: var(--color-font2); position: absolute; top: 83%; right: 5%;}
+
+.sec5{background: #fff; padding: 100px 50px 100px 50px; width: 100%;}
+.sec5 > span{color: var(--color-main); display: flex; gap: 10px; align-items: center; font-weight: 600; margin-bottom: 20px;}
+.sec5 > span::before{
+   content: "";
+   display: block;
+   width: 30px;
+   height: 2px;
+   background: var(--color-main);
+}
+.sec5 > div{display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px;}
+.sec5 > div h3{font-size: var(--font-h3-size);}
+.sec5 > div p{color: var(--color-font3); font-size: var(--font-18-size); margin-right: 50px;}
+.sec5 ul{display: flex; justify-content:space-between; margin: 100px 40px; flex-wrap: wrap;}
+.sec5 ul li{
+   display: flex;
+   flex-direction: column;
+   width: 19.5%;
+   background: #0A1630;
+}
+.sec5 ul li .img_box{
+   width: 100%; background: #fff;
+}
+.sec5 ul li .img_box img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.sec5 ul li .text_box{background: #0A1630; color: #fff; padding: 40px 20px;}
+.sec5 ul li .text_box span{font-size: 2.5rem;}
+.sec5 ul li .text_box dt{font-size: 1.2rem; margin: 20px 0;}
+.sec5 ul li .text_box dd{font-size: .95rem;}
+
+.neon {
+  font-size: 112px;
+  font-weight: 800;
+  color: #dbeaff;
+  text-shadow:
+    0 0 6px #4a90ff,
+    0 0 18px #4a90ff,
+    0 0 40px #2b6fe0;
+}
+.neon b { font-weight: inherit; }
+
+/* E: 5초 주기로 두 번 깜빡 */
+.fl1 { animation: fl1 5s linear infinite; }
+@keyframes fl1 {
+  0%, 19%, 23%, 25%, 54%, 58%, 100% { opacity: 1; }
+  20%, 24%, 55%, 56%            { opacity: .15; }
+}
+
+/* I: 7초 주기, E와 박자가 다름 */
+.fl2 { animation: fl2 7s linear infinite; }
+@keyframes fl2 {
+  0%, 8%, 12%, 40%, 44%, 46%, 78%, 100% { opacity: 1; }
+  10%, 42%, 45%, 80%                  { opacity: .15; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fl1, .fl2 { animation: none; }
+}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+  .sec1{padding: 100px 50px;align-items:normal;}
+  .sec1 div:nth-child(1){width: 50%;}
+
+  .sec2 ul li {justify-content: space-between;align-items:normal;gap: 0;}
+   .sec2 ul li>span{height: auto;}
+
+   .sec3 > div {
+    flex-direction: column;
+    margin-bottom: 30px;
+   }
+   .sec3 > div h3{margin-bottom: 20px;}
+   .sec3 > div p{margin-right: 0; text-align: center;}
+
+   .sec5 > div{flex-direction: column;}
+   .sec5 > div h3{margin-bottom: 20px;}
+}
+
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+   #content h2{position: absolute; top: -500px; left:50%;transform: translateX(-50%); font-size: 4rem; color: #fff;}
+   .sec1{flex-direction: column;
+      padding: 50px;
+      text-align: center;
+   } 
+   .sec1 div:nth-child(1){width: 100%;}
+   .sec1 div:nth-child(2){width: 100%;}
+   .sec1 p{margin-bottom: 40px;}
+
+   .sec2 > div {flex-direction: column; margin-bottom:0;}
+   .sec2 > div h3{margin-bottom: 20px;}
+   .sec2 ul li div strong{font-size: 5rem;}
+   .sec2 ul li{gap: 20px; flex-direction: column;margin: 50px 0;}
+   .sec2 ul li:nth-of-type(1) span,.sec2 ul li:nth-of-type(3) span {order: 2;}
+   .sec2 ul li>span{width: 100%;}
+   .sec2 ul li>div{width: 100%;}
+
+   .sec3 ul{flex-wrap: wrap;gap:20px 2%; align-items: normal; padding: 50px 0;}
+   .sec3 ul li{width: 49%;}
+
+   .sec5 ul{justify-content: center; gap: 30px 1%; margin: 50px 0;}
+   .sec5 ul li{width: 49%;}
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+   #content h2{font-size: 3.8rem;}
+   
+	.sec1 p{font-size: 1.15rem;}
+   .sec1 h3 {font-size:2.5rem;}
+   .sec2 > div h3{ font-size: 2.5rem; text-align: center;}
+   .sec3 > div h3{ font-size: 2.5rem; text-align: center;}
+   .sec4 > h3{font-size: 2.5rem; text-align: center;}
+   .sec5 > div h3{font-size: 2.5rem; text-align: center;}
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    .sec2 ul li div dl dt{font-size: 1.8rem;}
+	 .sec3 ul li{width: 100%;}
+    .sec3 ul li h4{font-size: 1.5rem;}
+
+    .sec4 ul{flex-wrap:wrap; gap: 15px 0;}
+    .sec4 ul li{width: 49%;}
+    .sec4 ul li:nth-of-type(1){border-left:1px solid rgba(255,255,255,.3)}
+    .sec4 > p{font-size: 14px; left: 11%;}
+
+
+    .sec5 ul li .text_box span{font-size: 2rem;}
+}
+
+@media screen and (max-width:480px) {
+   .sec1 h3 {font-size:2rem;}
+   .sec2 > div h3{ font-size: 2rem;}
+   .sec3 > div h3{ font-size: 2rem;}
+   .sec4 > h3{font-size: 2rem;}
+   .sec5 > div h3{font-size: 2rem;}
+}
